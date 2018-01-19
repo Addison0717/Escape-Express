@@ -1,0 +1,51 @@
+<!-- Animations for Panel 2 -->
+<!-- ScrollMagic.io -->
+<script>
+
+	$(function () { // wait for document ready
+		// init controller
+		var controller = new ScrollMagic.Controller();
+
+		// build tween
+		var tween = TweenMax.to("#target", 1, {rotation: 360, ease: Linear.easeNone});
+
+		// build scene
+		var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 900})
+						.setTween(tween)
+						.setPin("#target", {pushFollowers: false})
+
+            // REMOVE WHEN DONE DEVELOPING
+						.addIndicators() // add indicators (requires plugin)
+
+						.addTo(controller);
+
+	});
+</script>
+
+
+
+
+<!-- Animations for Panel 2 -->
+<!-- ScrollMagic.io -->
+<script>
+
+	$(function () { // wait for document ready
+
+    $('#controllerpart').each(function () {
+  var controller = new ScrollMagic({
+    container: $(this)
+  });
+  var parallax = new ScrollScene({triggerElement: "#trigger", duration: 900})
+  .addTo(controller)
+  .setTween(new TimelineMax().add([
+    TweenMax.to("#target", 1, {rotation: 360, ease: Linear.easeNone});
+    TweenMax.to("#target2", 1, {rotation: 360, ease: Linear.easeNone});
+  ]));
+
+
+      // REMOVE WHEN DONE DEVELOPING
+      .addIndicators() // add indicators (requires plugin)
+});
+
+	});
+</script>

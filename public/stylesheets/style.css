@@ -45,10 +45,10 @@ a:visited {}
 }
 
 .container2 {
-  display: flex;
-  text-align: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  width: 7em;
+  height: 7em;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .screen {
@@ -88,6 +88,12 @@ a:visited {}
   display: none;
 }
 
+#trigger {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 #escapeimage {
   width: 100%;
   height: 100%;
@@ -100,8 +106,8 @@ a:visited {}
 }
 
 #controllerpart {
-  width:25em;
-  height:25em;
+  width:100%;
+  height:100%;
 }
 
 /* Hang */
