@@ -525,16 +525,85 @@
 
       </div>
 
-      <!-- Panel 13 -->
-      <div class="screen white">
+      <!-- End Panel(s) -->
+      <div class="white panelword" id="p13trigger">
 
+        <div class="wordwrapper">
 
+          <div class="playtitle">
+            <h1>PLAY</h1>
+          </div>
 
+        </div>
 
       </div>
 
+      <div class="white panelword" id="p13trigger">
 
+        <div class="wordwrapper">
 
+          <div class="pausetitle">
+            <h1>PAUSE</h1>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="white panelword" id="p13trigger">
+
+        <div class="wordwrapper">
+
+          <div class="paradoxtitle">
+            <h1>PARADOX</h1>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="white panelword" id="p13trigger">
+
+        <div class="wordwrapper">
+
+          <div class="realitytitle">
+            <h1>REALITY</h1>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="white panelword" id="p13trigger">
+
+        <div class="wordwrapper">
+
+          <div class="escapetitle">
+            <h1>ESCAPE</h1>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- End Panel -->
+      <div class="white endpanel" id="endtrigger">
+
+        <div class="endpanelwrapper">
+
+          <img src="images/escape.png" alt="" id="escapeimage">
+
+        </div>
+
+        <div class="endfooter">
+
+          <p id="endleft">Copyright Josh Passon & Addison Schultz &copy; 2018</p>
+
+          <p id="endright">Made out of interest and love</p>
+
+        </div>
+
+      </div>
 
 
 
@@ -963,6 +1032,19 @@ var panel12end = new Waypoint({
 })
 </script>
 
+<!-- Animations for the End Panel -->
+<script type="text/javascript">
+var end = new Waypoint({
+
+  element: document.getElementById('endtrigger'),
+
+  handler: function() {
+
+    $(".endpanelwrapper").addClass('endanimate');
+
+  }
+})
+</script>
 
 
 
@@ -1239,6 +1321,64 @@ $(function () { // wait for document ready
 
   // get all slides
   var slides = document.querySelectorAll("div.panel12");
+
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+
+      // REMOVE WHEN DONE DEVELOPING
+      // .addIndicators() // add indicators (requires plugin)
+
+      .addTo(controller);
+  }
+
+
+});
+</script>
+<!-- Panel Word Swipe -->
+<script>
+$(function () { // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
+
+  // get all slides
+  var slides = document.querySelectorAll("div.panelword");
+
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+
+      // REMOVE WHEN DONE DEVELOPING
+      // .addIndicators() // add indicators (requires plugin)
+
+      .addTo(controller);
+  }
+
+
+});
+</script>
+<!-- End Panel Swipe -->
+<script>
+$(function () { // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
+
+  // get all slides
+  var slides = document.querySelectorAll("div.endpanel");
 
   // create scene for every slide
   for (var i=0; i<slides.length; i++) {
