@@ -78,6 +78,26 @@ a:visited {}
   width: 100%
 }
 
+.panel9 {
+  height: 1400%;
+  width: 100%
+}
+
+.panel10 {
+  height: 1400%;
+  width: 100%
+}
+
+.panel11 {
+  height: 1300%;
+  width: 100%
+}
+
+.panel12 {
+  height: 1400%;
+  width: 100%
+}
+
 .screen {
   height:300%;
   width:100%;
@@ -365,6 +385,151 @@ font-size: 3em;
 .panel8endanimate {
   opacity: 0;
 }
+
+.panel9wrapper {
+  opacity: 1;
+  transition: all 2s;
+}
+
+#gamecubeimage {
+  /* float: right; */
+  margin-left: 100px;
+  width:470px;
+}
+
+#chaincontrollerimage{
+  width: 550px;
+  /* margin-top: 200px; */
+  /* float: right; */
+  margin-left: 45px;
+}
+
+.chaincontroller {
+  opacity: 0;
+  transition: all 2s;
+}
+
+.chaincontrolleranimate {
+  opacity: 1;
+}
+
+.paradox {
+  position: absolute;
+  font-size: 2.2em;
+  margin-left: 640px;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transition: all 2s;
+}
+
+.paradoxanimation {
+  opacity: 1;
+}
+
+.panel9endanimate {
+  opacity: 0;
+}
+
+.panel10wrapper {
+  display: flex;
+  opacity: 1;
+  transition: all 2s;
+}
+
+.have {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 250px;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transition: all 2s;
+}
+
+.haveanimate{
+  opacity: 1;
+}
+
+.seem {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 250px;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transition: all 2s;
+}
+
+.seemanimate {
+  opacity: 1;
+}
+
+#majoraimage {
+  padding-top: 90px;
+  width: 400px;
+}
+
+.panel10endanimate {
+  opacity: 0;
+}
+
+.panel11wrapper {
+    display: flex;
+    justify-content: space-between;
+    opacity: 1;
+    transition: all 2s;
+}
+
+.reality {
+  font-size: 3em;
+  margin-top: 325px;
+  margin-left: 75px;
+  opacity: 0;
+  transition: all 2s;
+}
+
+#gcfrontimage {
+  width:500px;
+  margin-top: 250px;
+}
+
+.realityanimate {
+  opacity: 1;
+}
+
+.panel11endanimate {
+  opacity: 0;
+}
+
+.panel12wrapper {
+  display: flex;
+  opacity: 1;
+  transition: all 2s;
+}
+
+#linkimage {
+  width:550px;
+  margin-top: 50px;
+  margin-left: 25px;
+}
+
+.world {
+  font-size: 3em;
+  margin-top: 100px;
+  opacity: 0;
+  transition: all 2s;
+}
+
+.worldanimate {
+  opacity: 1;
+}
+
+.panel12endanimate {
+  opacity: 0;
+}
+
+
+
+
+
 
 
 

@@ -442,16 +442,95 @@
       </div>
 
        <!-- Panel 9 -->
-      <div class="screen purple" id="p9trigger">
+      <div class="purple panel9" id="p9trigger">
 
         <div class="panel9wrapper">
 
+          <div class="gamecube">
+            <img src="images/gamecube-outline.png" alt="" id="gamecubeimage">
 
+            <div class="paradox">
+              <p>A paradox is created. We need a break.</p>
+            </div>
+
+          </div>
+
+          <div class="chaincontroller">
+            <img src="images/chained-controller.png" alt="" id="chaincontrollerimage">
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <!-- Panel 10 -->
+      <div class="purple panel10" id="p10trigger">
+
+        <div class="panel10wrapper">
+
+          <div class="have">
+            <p>But we don't have the time.</p>
+          </div>
+
+          <div class="majora">
+            <img src="images/majoras-mask.png" alt="" id="majoraimage">
+          </div>
+
+          <div class="seem">
+            <p>We never seem to have the time.</p>
+          </div>
 
 
 
         </div>
-        
+
+      </div>
+
+      <!-- Panel 11 -->
+      <div class="yellow panel11" id="p11trigger">
+        <div class="panel11wrapper">
+
+          <div class="reality">
+            <p>All I want is to escape this reality.</p>
+          </div>
+
+          <div class="gcfront">
+            <img src="images/gamecube-plugged-in.png" alt="" id="gcfrontimage">
+          </div>
+
+
+
+        </div>
+      </div>
+
+      <!-- Panel 12 -->
+      <div class="yellow panel12" id="p12trigger">
+
+        <div class="panel12wrapper">
+
+          <div class="link">
+
+            <img src="images/young-link.png" alt="Young Link" id="linkimage">
+
+          </div>
+
+          <div class="world">
+
+            <p>Escape into the worlds I've grown up with. The ones that never change.</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Panel 13 -->
+      <div class="screen white">
+
+
+
+
       </div>
 
 
@@ -459,20 +538,6 @@
 
 
 
-
-
-
-
-
-
-
-      <div class="screen purple"> <h1>Test</h1> </div>
-      <div class="screen yellow"> <h1>Test</h1> </div>
-      <div class="screen yellow"> <h1>Test</h1> </div>
-      <div class="screen white"> <h1>Test</h1> </div>
-
-
-      <h1>Test!!!! ESCAPE is going to be awesome</h1>
 
 
 <script type="text/javascript" src="/javascripts/main.js"></script>
@@ -508,6 +573,7 @@
         $(".downarrow").fadeIn(7000).removeClass('hidden');
 });
 </script>
+
 
 <!-- Animations for Panel 2 -->
 <!-- ScrollMagic.io -->
@@ -711,6 +777,7 @@ var panel7 = new Waypoint({
   offset: -1000
 })
 </script>
+
 <script type="text/javascript">
 var panel7end = new Waypoint({
 
@@ -741,7 +808,160 @@ var panel8end = new Waypoint({
 </script>
 
 
+<!-- Animations for Panel 9 -->
+<script type="text/javascript">
+var paradoxanimation = new Waypoint({
 
+  element: document.getElementById('p9trigger'),
+
+  handler: function() {
+
+    $(".paradox").addClass('paradoxanimation');
+
+  }
+})
+</script>
+<script type="text/javascript">
+var chainanimation = new Waypoint({
+
+  element: document.getElementById('p9trigger'),
+
+  handler: function() {
+
+    $(".chaincontroller").addClass('chaincontrolleranimate');
+
+  },
+  offset: -1000
+})
+</script>
+<script type="text/javascript">
+$(function(){
+  $("#gamecubeimage").on({
+    mouseenter: function(){
+      $(this).attr('src','images/gamecube-fill.png');
+      $(this).attr('style', 'margin-left:98px;');
+    },
+
+    mouseleave: function(){
+      $(this).attr('src','images/gamecube-outline.png');
+      $(this).attr('style', '');
+    }
+  });
+});
+</script>
+<script type="text/javascript">
+var panel9end = new Waypoint({
+
+  element: document.getElementById('p9trigger'),
+
+  handler: function() {
+
+    $(".panel9wrapper").addClass('panel9endanimate');
+
+  },
+  offset: -6000
+})
+</script>
+
+
+<!-- Animations for Panel 10 -->
+<script type="text/javascript">
+var have = new Waypoint({
+
+  element: document.getElementById('p10trigger'),
+
+  handler: function() {
+
+    $(".have").addClass('haveanimate');
+
+  },
+  offset: -2000
+})
+</script>
+<script type="text/javascript">
+var seem = new Waypoint({
+
+  element: document.getElementById('p10trigger'),
+
+  handler: function() {
+
+    $(".seem").addClass('seemanimate');
+
+  },
+  offset: -2000
+})
+</script>
+<script type="text/javascript">
+var panel10end = new Waypoint({
+
+  element: document.getElementById('p10trigger'),
+
+  handler: function() {
+
+    $(".panel10wrapper").addClass('panel10endanimate');
+
+  },
+  offset: -6000
+})
+</script>
+
+
+<!-- Animations for Panel 11 -->
+<script type="text/javascript">
+var reality = new Waypoint({
+
+  element: document.getElementById('p11trigger'),
+
+  handler: function() {
+
+    $(".reality").addClass('realityanimate');
+
+  },
+  offset: -2000
+})
+</script>
+<script type="text/javascript">
+var panel11end = new Waypoint({
+
+  element: document.getElementById('p11trigger'),
+
+  handler: function() {
+
+    $(".panel11wrapper").addClass('panel11endanimate');
+
+  },
+  offset: -4000
+})
+</script>
+
+
+<!-- Animations for Panel 12 -->
+<script type="text/javascript">
+var world = new Waypoint({
+
+  element: document.getElementById('p12trigger'),
+
+  handler: function() {
+
+    $(".world").addClass('worldanimate');
+
+  },
+  offset: -1000
+})
+</script>
+<script type="text/javascript">
+var panel12end = new Waypoint({
+
+  element: document.getElementById('p12trigger'),
+
+  handler: function() {
+
+    $(".panel12wrapper").addClass('panel12endanimate');
+
+  },
+  offset: -4000
+})
+</script>
 
 
 
@@ -920,7 +1140,122 @@ $(function () { // wait for document ready
 
 });
 </script>
+<!-- Panel 9 Swipe -->
+<script>
+$(function () { // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
 
+  // get all slides
+  var slides = document.querySelectorAll("div.panel9");
+
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+
+      // REMOVE WHEN DONE DEVELOPING
+      // .addIndicators() // add indicators (requires plugin)
+
+      .addTo(controller);
+  }
+
+
+});
+</script>
+<!-- Panel 10 Swipe -->
+<script>
+$(function () { // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
+
+  // get all slides
+  var slides = document.querySelectorAll("div.panel10");
+
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+
+      // REMOVE WHEN DONE DEVELOPING
+      // .addIndicators() // add indicators (requires plugin)
+
+      .addTo(controller);
+  }
+
+
+});
+</script>
+<!-- Panel 11 Swipe -->
+<script>
+$(function () { // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
+
+  // get all slides
+  var slides = document.querySelectorAll("div.panel11");
+
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+
+      // REMOVE WHEN DONE DEVELOPING
+      // .addIndicators() // add indicators (requires plugin)
+
+      .addTo(controller);
+  }
+
+
+});
+</script>
+<!-- Panel 12 Swipe -->
+<script>
+$(function () { // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
+
+  // get all slides
+  var slides = document.querySelectorAll("div.panel12");
+
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+
+      // REMOVE WHEN DONE DEVELOPING
+      // .addIndicators() // add indicators (requires plugin)
+
+      .addTo(controller);
+  }
+
+
+});
+</script>
 
   </body>
 </html>
