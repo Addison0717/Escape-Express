@@ -49,8 +49,18 @@ a:visited {}
   height: 7em;
   margin-left: 50px;
   margin-right: 50px;
-  margin-top:20px;
+  margin-top: 20px;
   margin-bottom:20px;
+}
+
+.panel4 {
+  height:1500%;
+  width:100%;
+}
+
+.panel5 {
+  height: 1400%;
+  width: 100%
 }
 
 .screen {
@@ -112,6 +122,139 @@ a:visited {}
   width:100%;
   height:100%;
 }
+
+.dekuwrapper {
+  text-align: center;
+  opacity: 0;
+  transition: all 3s;
+}
+
+#deku {
+  height: 350px;
+  width: 350px;
+  margin-top: 40px;
+}
+
+.dekuanimate {
+  opacity: 1;
+}
+
+.fate {
+  font-size: 4em;
+  padding-top: 70px;
+  text-align: center;
+  opacity: 0;
+  transition: all 2s;
+}
+
+.fateanimate {
+  opacity: 1;
+}
+
+.heartwrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  transition: all 2s;
+}
+
+.heart1 {
+  margin-top: 160px;
+  opacity: 0;
+  transition: all 2s;
+}
+
+.heart2 {
+  margin-top: 160px;
+  opacity: 0;
+  transition: all 2s;
+}
+
+.heart3 {
+  margin-top: 130px;
+  opacity: 0;
+  transition: all 2s;
+}
+
+#heart1 {
+  width: 400px;
+
+}
+
+#heart2 {
+  width: 400px;
+}
+
+#heart3 {
+  width: 400px;
+}
+
+.heartanimate {
+  opacity: 1;
+}
+
+.pause {
+  text-align: center;
+  font-size: 3em;
+  transition: all 2s;
+}
+
+.p4end {
+  transition: all 2s;
+  opacity: 1;
+}
+
+.p4endanimate {
+  opacity: 0;
+}
+
+.panel5wrapper {
+  display: flex;
+  transition: all 2s;
+}
+
+.holdingcontroller {
+    flex: 1;
+}
+
+#holdingcontrollerimage {
+    margin-top: 120px;
+    width: 750px;
+}
+
+.play {
+  flex: 1;
+  margin-top: 250px;
+  font-size: 3em;
+  opacity: 0;
+  transition: all 2s;
+}
+
+.playanimate {
+  opacity: 1;
+}
+
+.p5end {
+  transition: all 2s;
+  opacity: 1;
+}
+
+.p5endanimate {
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Hang */
 @-webkit-keyframes hvr-hang {

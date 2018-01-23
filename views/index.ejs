@@ -8,6 +8,9 @@
       <!-- jQuery CDN -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+      <!-- Waypoints CDN -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+
       <!-- JavaScript file -->
       <script type="text/javascript" src="/javascripts/main.js"></script>
 
@@ -31,11 +34,11 @@
       <!-- Panel 1 -->
       <div class="screen white">
 
-        <div class="container hidden">
+        <div class="container hidden firstimage">
             <img src="images/escape.png" alt="ESCAPE" id="escapeimage">
         </div>
 
-        <div class="container hidden" style="font-size:1.9em;">
+        <div class="container hidden downarrow" style="font-size:1.9em;">
              <i class="fa fa-chevron-down hvr-hang" aria-hidden="true"></i>
          </div>
 
@@ -290,11 +293,64 @@
       </div>
 
       <!-- Panel 3 -->
-      <div class="screen lightgrey">
+      <div class="screen lightgrey" id="p3trigger">
+
+        <div class="fate">
+
+          <p>You've been met with a terrible fate, haven't you?</p>
+
+        </div>
+
+        <div class="dekuwrapper">
+
+          <img src="images/dekuscrub.png" alt="Deku Scrub" id="deku">
+
+        </div>
+
+      </div>
+
+      <!-- Panel 4 -->
+      <div class="green panel4" id="p4trigger">
+
+        <div class="heartwrapper">
+
+        <div class="heart1">
+          <img src="images/heart1.png" alt="Heart" id="heart1">
+        </div>
+
+        <div class="heart2">
+          <img src="images/heart1.png" alt="Heart" id="heart2">
+        </div>
+
+        <div class="heart3">
+          <img src="images/heart2.png" alt="Heart" id="heart3">
+        </div>
+
+        </div>
+
+        <div class="pause">
+          <p>Wouldn't it be great, if we could just press pause?</p>
+          <p>A pause on life.</p>
+        </div>
 
 
 
+      </div>
 
+      <!-- Panel 5 -->
+      <div class="green panel5" id="p5trigger">
+
+        <div class="panel5wrapper">
+
+          <div class="holdingcontroller">
+            <img src="images/holding-controller.png" alt="Holding GC Controller" class="" id="holdingcontrollerimage">
+          </div>
+
+          <div class="play">
+            <p>And that starts by pressing play.</p>
+          </div>
+
+        </div>
 
       </div>
 
@@ -303,9 +359,10 @@
 
 
 
-      <div class="screen lightgrey"> <h1>Test</h1> </div>
-      <div class="screen green"> <h1>Test</h1> </div>
-      <div class="screen green"> <h1>Test</h1> </div>
+
+
+
+
       <div class="screen darkgrey"> <h1>Test</h1> </div>
       <div class="screen darkgrey"> <h1>Test</h1> </div>
       <div class="screen red"> <h1>Test</h1> </div>
@@ -327,6 +384,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
+<!-- Waypoints CDN -->
+<script src="javascripts/jquery.waypoints.min.js"></script>
+
 <!-- ScrollMagic Link -->
 <script type="text/javascript" src="/javascripts/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
 
@@ -340,23 +400,20 @@
 <script type="text/javascript" src="/javascripts/ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
 
 
+
+
 <!-- Animations for Panel 1 -->
 <script type="text/javascript">
-$( document ).ready(function(){
-        $("div.hidden").fadeIn(4000).removeClass('hidden');
+  $( document ).ready(function(){
+        $(".firstimage").fadeIn(4000).removeClass('hidden');
 
-        $(".downarrow").fadeIn(7000).removeClass('hidden')
+        $(".downarrow").fadeIn(7000).removeClass('hidden');
 });
 </script>
-
-
-
-
 
 <!-- Animations for Panel 2 -->
 <!-- ScrollMagic.io -->
 <script>
-
 	$(function () { // wait for document ready
 		// init controller
 		var controller = new ScrollMagic.Controller();
@@ -402,7 +459,7 @@ $( document ).ready(function(){
 						// .setPin("#target", {pushFollowers: false})
 
             // REMOVE WHEN DONE DEVELOPING
-						.addIndicators() // add indicators (requires plugin)
+						// .addIndicators() // add indicators (requires plugin)
 
 						.addTo(controller);
 
@@ -410,10 +467,122 @@ $( document ).ready(function(){
 </script>
 
 
+<!-- Animations for Panel 3 -->
+<script type="text/javascript">
+  var waypoint = new Waypoint({
+
+    element: document.getElementById('p3trigger'),
+
+    handler: function() {
+
+      $(".dekuwrapper").addClass('dekuanimate');
+      $(".fate").addClass('fateanimate');
+  }
+  })
+</script>
 
 
+<!-- Animations for Panel 4 -->
+<script type="text/javascript">
+var heart1 = new Waypoint({
+
+  element: document.getElementById('p4trigger'),
+
+  handler: function() {
+
+    $(".heart1").addClass('heartanimate');
+
+  }
+})
+</script>
+
+<script type="text/javascript">
+var heart2 = new Waypoint({
+
+  element: document.getElementById('p4trigger'),
+
+  handler: function() {
+
+    $(".heart2").addClass('heartanimate');
+
+  },
+  offset: -2000
+})
+</script>
+
+<script type="text/javascript">
+var heart3 = new Waypoint({
+
+  element: document.getElementById('p4trigger'),
+
+  handler: function() {
+
+    $(".heart3").addClass('heartanimate');
+
+  },
+  offset: -4000
+})
+</script>
+
+<script type="text/javascript">
+var panel4end = new Waypoint({
+
+  element: document.getElementById('p4trigger'),
+
+  handler: function() {
+
+    $(".heartwrapper").addClass('p4endanimate');
+
+  },
+  offset: -6000
+})
+</script>
+
+<script type="text/javascript">
+var panel4end = new Waypoint({
+
+  element: document.getElementById('p4trigger'),
+
+  handler: function() {
+
+    $(".pause").addClass('p4endanimate');
+
+  },
+  offset: -6000
+})
+</script>
 
 
+<!-- Animations for Panel 5 -->
+<script type="text/javascript">
+var play = new Waypoint({
+
+  element: document.getElementById('p5trigger'),
+
+  handler: function() {
+
+    $(".play").addClass('playanimate');
+
+  },
+  offset: -2000
+})
+</script>
+
+<script type="text/javascript">
+var panel5end = new Waypoint({
+
+  element: document.getElementById('p5trigger'),
+
+  handler: function() {
+
+    $(".panel5wrapper").addClass('p5endanimate');
+
+  },
+  offset: -7000
+})
+</script>
+
+<!-- Animations for Panel 6 -->
 
 
 <!-- ScrollMagic.io Natural Panel Wipe -->
@@ -445,9 +614,62 @@ $(function () { // wait for document ready
 
 });
 </script>
+<script>
+$(function () { // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
+
+  // get all slides
+  var slides = document.querySelectorAll("div.panel4");
+
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+
+      // REMOVE WHEN DONE DEVELOPING
+      // .addIndicators() // add indicators (requires plugin)
+
+      .addTo(controller);
+  }
 
 
+});
+</script>
+<script>
+$(function () { // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
 
+  // get all slides
+  var slides = document.querySelectorAll("div.panel5");
+
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+
+      // REMOVE WHEN DONE DEVELOPING
+      // .addIndicators() // add indicators (requires plugin)
+
+      .addTo(controller);
+  }
+
+
+});
+</script>
 
 
   </body>
