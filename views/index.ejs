@@ -354,6 +354,71 @@
 
       </div>
 
+      <!-- Panel 6 -->
+      <div class="darkgrey panel6" id="p6trigger">
+
+
+        <div class="panel6wrapper">
+
+          <div class="panel6images">
+
+            <div class="">
+              <img src="images/playing-sunshine.png" alt="" id="playingsunshine">
+            </div>
+
+            <div class="panel6text">
+
+              <div class="nothing">
+                <p>Nothing can get to us.</p>
+              </div>
+
+              <div class="escaped">
+                <p>We have escaped.</p>
+              </div>
+
+            </div>
+
+            <div class="">
+              <img src="images/sunshine-on-screen.png" alt="" id="screensunshine">
+            </div>
+
+          </div>
+
+
+
+        <!-- May need another div for cord(s) -->
+
+        </div>
+
+      </div>
+
+      <!-- Panel 7 -->
+      <div class="red panel7" id="p7trigger">
+
+      <div class="panel7wrapper">
+
+        <div class="panel7image">
+
+          <img src="images/controller.png" alt="Controller" id="controllerimage">
+
+        </div>
+
+        <div class="panel7text">
+
+          <div class="cantpause">
+            <p>We can't always press pause.</p>
+          </div>
+
+          <div class="life">
+            <p>Because when we do, life still moves on.</p>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      </div>
 
 
 
@@ -363,9 +428,11 @@
 
 
 
-      <div class="screen darkgrey"> <h1>Test</h1> </div>
-      <div class="screen darkgrey"> <h1>Test</h1> </div>
-      <div class="screen red"> <h1>Test</h1> </div>
+
+
+
+
+
       <div class="screen red"> <h1>Test</h1> </div>
       <div class="screen purple"> <h1>Test</h1> </div>
       <div class="screen purple"> <h1>Test</h1> </div>
@@ -582,7 +649,73 @@ var panel5end = new Waypoint({
 })
 </script>
 
+
 <!-- Animations for Panel 6 -->
+<script type="text/javascript">
+var play = new Waypoint({
+
+  element: document.getElementById('p6trigger'),
+
+  handler: function() {
+
+    $(".panel6text").addClass('p6textanimate');
+
+  },
+  offset: -2000
+})
+</script>
+
+
+<!-- Animations for Panel7 -->
+<script type="text/javascript">
+var panel7 = new Waypoint({
+
+  element: document.getElementById('p7trigger'),
+
+  handler: function() {
+
+    $(".panel7image").addClass('panel7imageanimate');
+
+  },
+  offset: -2000
+})
+</script>
+<!--
+<script type="text/javascript">
+var panel7 = new Waypoint({
+
+  element: document.getElementById('p7trigger'),
+
+  handler: function() {
+
+    $(".panel7image").removeClass('panel7imageanimate');
+
+  },
+  offset: -6000
+})
+</script> -->
+
+<script type="text/javascript">
+var panel7 = new Waypoint({
+
+  element: document.getElementById('p7trigger'),
+
+  handler: function() {
+
+    $(".panel7wrapper").addClass('panel7endanimate');
+
+  },
+  offset: -6000
+})
+</script>
+
+
+
+
+
+
+
+
 
 
 <!-- ScrollMagic.io Natural Panel Wipe -->
@@ -614,6 +747,7 @@ $(function () { // wait for document ready
 
 });
 </script>
+<!-- Panel 4 Swipe -->
 <script>
 $(function () { // wait for document ready
   // init
@@ -642,6 +776,7 @@ $(function () { // wait for document ready
 
 });
 </script>
+<!-- Panel 5 Swipe -->
 <script>
 $(function () { // wait for document ready
   // init
@@ -670,7 +805,64 @@ $(function () { // wait for document ready
 
 });
 </script>
+<!-- Panel 6 Swipe -->
+<script>
+$(function () { // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
 
+  // get all slides
+  var slides = document.querySelectorAll("div.panel6");
+
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+
+      // REMOVE WHEN DONE DEVELOPING
+      // .addIndicators() // add indicators (requires plugin)
+
+      .addTo(controller);
+  }
+
+
+});
+</script>
+<!-- Panel 7 Swipe -->
+<script>
+$(function () { // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
+
+  // get all slides
+  var slides = document.querySelectorAll("div.panel7");
+
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+
+      // REMOVE WHEN DONE DEVELOPING
+      // .addIndicators() // add indicators (requires plugin)
+
+      .addTo(controller);
+  }
+
+
+});
+</script>
 
   </body>
 </html>
