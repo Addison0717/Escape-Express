@@ -73,6 +73,11 @@ a:visited {}
   width: 100%
 }
 
+.panel8 {
+  height: 1000%;
+  width: 100%
+}
+
 .screen {
   height:300%;
   width:100%;
@@ -333,10 +338,33 @@ font-size: 3em;
   opacity: 0;
 }
 
+.panel8wrapper {
+  display: flex;
+  opacity: 1;
+  transition: all 2s;
+}
 
+.can {
+  font-size: 3em;
+  margin-top: 190px;
+  padding-left:50px;
+  padding-right:50px;
+}
 
+.dont {
+  font-size: 3em;
+  margin-top: 190px;
+  padding-left:50px;
+  padding-right:50px;
+}
 
+#playingwindwakerimage {
+  width: 350px;
+}
 
+.panel8endanimate {
+  opacity: 0;
+}
 
 
 

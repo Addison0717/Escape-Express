@@ -395,29 +395,63 @@
       <!-- Panel 7 -->
       <div class="red panel7" id="p7trigger">
 
-      <div class="panel7wrapper">
+        <div class="panel7wrapper">
 
-        <div class="panel7image">
+          <div class="panel7image">
 
-          <img src="images/controller.png" alt="Controller" id="controllerimage">
+            <img src="images/controller.png" alt="Controller" id="controllerimage">
+
+          </div>
+
+          <div class="panel7text">
+
+            <div class="cantpause">
+              <p>We can't always press pause.</p>
+            </div>
+
+            <div class="life">
+              <p>Because when we do, life still moves on.</p>
+            </div>
+
+          </div>
+
 
         </div>
 
-        <div class="panel7text">
+      </div>
 
-          <div class="cantpause">
-            <p>We can't always press pause.</p>
+      <!-- Panel 8 -->
+      <div class="red panel8" id="p8trigger">
+
+        <div class="panel8wrapper">
+
+          <div class="can">
+            <p>We can fall behind.</p>
           </div>
 
-          <div class="life">
-            <p>Because when we do, life still moves on.</p>
+          <div class="playingwindwaker">
+            <img src="images/playing-windwaker.png" alt="" id="playingwindwakerimage">
+          </div>
+
+          <div class="dont">
+              <p>Don't fall behind.</p>
           </div>
 
         </div>
 
-
       </div>
 
+       <!-- Panel 9 -->
+      <div class="screen purple" id="p9trigger">
+
+        <div class="panel9wrapper">
+
+
+
+
+
+        </div>
+        
       </div>
 
 
@@ -432,9 +466,6 @@
 
 
 
-
-      <div class="screen red"> <h1>Test</h1> </div>
-      <div class="screen purple"> <h1>Test</h1> </div>
       <div class="screen purple"> <h1>Test</h1> </div>
       <div class="screen yellow"> <h1>Test</h1> </div>
       <div class="screen yellow"> <h1>Test</h1> </div>
@@ -666,7 +697,7 @@ var play = new Waypoint({
 </script>
 
 
-<!-- Animations for Panel7 -->
+<!-- Animations for Panel 7 -->
 <script type="text/javascript">
 var panel7 = new Waypoint({
 
@@ -677,26 +708,11 @@ var panel7 = new Waypoint({
     $(".panel7image").addClass('panel7imageanimate');
 
   },
-  offset: -2000
+  offset: -1000
 })
 </script>
-<!--
 <script type="text/javascript">
-var panel7 = new Waypoint({
-
-  element: document.getElementById('p7trigger'),
-
-  handler: function() {
-
-    $(".panel7image").removeClass('panel7imageanimate');
-
-  },
-  offset: -6000
-})
-</script> -->
-
-<script type="text/javascript">
-var panel7 = new Waypoint({
+var panel7end = new Waypoint({
 
   element: document.getElementById('p7trigger'),
 
@@ -709,8 +725,20 @@ var panel7 = new Waypoint({
 })
 </script>
 
+<!-- Animations for Panel 8 -->
+<script type="text/javascript">
+var panel8end = new Waypoint({
 
+  element: document.getElementById('p8trigger'),
 
+  handler: function() {
+
+    $(".panel8wrapper").addClass('panel8endanimate');
+
+  },
+  offset: -3000
+})
+</script>
 
 
 
@@ -863,6 +891,36 @@ $(function () { // wait for document ready
 
 });
 </script>
+<!-- Panel 8 Swipe -->
+<script>
+$(function () { // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
+
+  // get all slides
+  var slides = document.querySelectorAll("div.panel8");
+
+  // create scene for every slide
+  for (var i=0; i<slides.length; i++) {
+    new ScrollMagic.Scene({
+        triggerElement: slides[i]
+      })
+      .setPin(slides[i])
+
+      // REMOVE WHEN DONE DEVELOPING
+      // .addIndicators() // add indicators (requires plugin)
+
+      .addTo(controller);
+  }
+
+
+});
+</script>
+
 
   </body>
 </html>
